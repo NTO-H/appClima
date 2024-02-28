@@ -86,7 +86,7 @@ const style=StyleSheet.create({
 
     },
     climaContainer:{
-        backgroundColor:'rgba(228, 228, 228, 0.31)', // color difuminado,
+        backgroundColor:'rgba(228, 228, 228, 0.31)',
         borderRadius: 10,
         marginVertical: 10,
         height:100,
