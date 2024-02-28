@@ -31,10 +31,18 @@ const Clima = () => {
         return(
             <View style={style.screenContent}>
                 <Text style={style.title}>{data.location.name}</Text>
-                <Text style={style.temperature}>{data.current.temp_c}°C</Text>
-                <Text style={style.condition}>{data.current.condition.text} *
-                max {data.forecast.forecastday[0].day.maxtemp_c} °C
-                min {data.forecast.forecastday[0].day.mintemp_c} °C </Text>
+                <Text style={style.temperature}>
+                {data.current.temp_c}°C
+                </Text>
+                <Text style={style.condition}>
+<Text style={style.estado}>
+                {data.current.condition.text} {'\n'}
+      
+    </Text>
+
+                max {data.forecast.forecastday[0].day.maxtemp_c}
+                min °C{'\n'} {data.forecast.forecastday[0].day.mintemp_c} °C
+                 </Text>
                 <FlatList
                 data={data.forecast.forecastday}
                 renderItem={({item})=><Card fecha={item.date}
@@ -53,7 +61,7 @@ const Clima = () => {
         )
     }
  return (
-    <LinearGradient colors={['#4c669f', '#3b5998', '#192f6a']} style={style.mainContainer}>
+    <LinearGradient colors={['#c4aeff', '#b969ff', '#6226af']} style={style.mainContainer}>
       <Text style={style.header}>Clima</Text>
       {load?LScreen():Uscreen()}
     </LinearGradient>
@@ -62,27 +70,41 @@ const Clima = () => {
 const style=StyleSheet.create({
     mainContainer: {
         flex: 1,
-        padding: 20,
+        // padding: 70,
+        padding:20,
         backgroundColor: '#f5f5f5'
     },
     header: {
-        fontSize: 30,
+        fontSize: 50,
         fontWeight: 'bold',
-        marginBottom: 20,
+        color:"#ffde83",
+        textAlign: 'center',
+
+
+        marginBottom: 40,
+        marginTop: 50,
+
     },
     climaContainer:{
-        backgroundColor:'rgba(192, 147, 0, 0.5)', // color difuminado,
+        backgroundColor:'rgba(228, 228, 228, 0.31)', // color difuminado,
         borderRadius: 10,
         marginVertical: 10,
+        height:100,
+      width:300,
+padding:10,
+        flexDirection:'column',
+       
     },
     cardContent: {
         flexDirection:'row',
         justifyContent: 'space-between',
         padding: 10,
+
     },
     cardText: {
         fontSize: 16,
-        color: '#fff',
+        color: '#fff373',
+       
     },
     cardImage: {
         height:50,
@@ -100,8 +122,14 @@ const style=StyleSheet.create({
         fontSize: 70,
         fontWeight: 'bold',
     },
+    estado: {
+        fontWeight: 'bold',
+        fontSize: 45,
+
+    },
     condition: {
         fontSize: 18,
+        color:"#291d1d",
         textAlign: 'center',
         marginBottom: 20,
     }
