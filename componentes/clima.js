@@ -40,7 +40,7 @@ const Clima = () => {
       
     </Text>
 
-                max {data.forecast.forecastday[0].day.maxtemp_c}
+                max {data.forecast.forecastday[0].day.maxtemp_c} {'\n'}
                 min °C{'\n'} {data.forecast.forecastday[0].day.mintemp_c} °C
                  </Text>
                 <FlatList
